@@ -34,6 +34,16 @@ class BaseReplacementPolicy(SimObject):
     cxx_class = 'gem5::replacement_policy::Base'
     cxx_header = "mem/cache/replacement_policies/base.hh"
 
+class MyMRURP(BaseReplacementPolicy):
+    type = 'MyMRURP'
+    cxx_class = 'gem5::replacement_policy::MyMRU'
+    cxx_header = 'mem/cache/replacement_policies/mymru_rp.hh'
+
+class CLOCKRP(BaseReplacementPolicy):
+    type = 'CLOCKRP'
+    cxx_class = 'gem5::replacement_policy::CLOCK'
+    cxx_header = 'mem/cache/replacement_policies/clock_rp.hh'
+
 class DuelingRP(BaseReplacementPolicy):
     type = 'DuelingRP'
     cxx_class = 'gem5::replacement_policy::Dueling'

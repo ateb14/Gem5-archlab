@@ -1,0 +1,9 @@
+#!/bin/sh
+cd /root
+chmod 777 pthread_matrixmul
+/sbin/m5 resetstats
+./pthread_matrixmul 2
+/sbin/m5 exit
+
+
+

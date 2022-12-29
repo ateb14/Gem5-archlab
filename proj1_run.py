@@ -18,6 +18,6 @@ for j in range(2,4):
         str(cnt)+ ' configs/proj1/two-level.py --o3 --cpu_clock=4GHz --'+ \
         dram_list[i] + ' --cmd='+ str(j)
         print(cmd)
-        os.system(cmd)
+        #os.system(cmd)
         print(cnt, 'finished')
         cnt += 1

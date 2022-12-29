@@ -761,3 +761,18 @@ class MultiperspectivePerceptronTAGE8KB(MultiperspectivePerceptronTAGE):
     tage = MPP_TAGE_8KB()
     loop_predictor = MPP_LoopPredictor_8KB()
     statistical_corrector = MPP_StatisticalCorrector_8KB()
+
+
+class MySimpleBP(BranchPredictor):
+    type = 'MySimpleBP'
+    cxx_class = 'gem5::branch_prediction::MySimpleBP'
+    cxx_header = 'cpu/pred/mysimplebp.hh'
+
+class MyPerceptronBP(BranchPredictor):
+    type = 'MyPerceptronBP'
+    cxx_class = 'gem5::branch_prediction::MyPerceptronBP'
+    cxx_header = 'cpu/pred/myperceptronbp.hh'
+    
+    GHRsize = Param.Unsigned(12, "bits of the GHR")
+    Threshold = Param.Unsigned(32, "threshold")
+    TableSize = Param.Unsigned(128, "size of the perceptron table")
